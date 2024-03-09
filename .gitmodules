@@ -7,3 +7,6 @@
 [submodule "keycloak-operator/keycloak-k8s-resources"]
 	path = keycloak-operator/keycloak-k8s-resources
 	url = https://github.com/keycloak/keycloak-k8s-resources.git
+[submodule "grafana-operator/grafana-operator"]
+	path = grafana-operator/grafana-operator
+	url = https://github.com/grafana/grafana-operator.git

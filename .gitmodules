@@ -13,3 +13,6 @@
 [submodule "rook/rook"]
 	path = rook/rook
 	url = https://github.com/rook/rook.git
+[submodule "metrics-server/metrics-server"]
+	path = metrics-server/metrics-server
+	url = https://github.com/kubernetes-sigs/metrics-server.git

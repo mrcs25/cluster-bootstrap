@@ -28,3 +28,6 @@
 [submodule "metallb/metallb"]
 	path = metallb/metallb
 	url = https://github.com/metallb/metallb.git
+[submodule "nginx-ingress/ingress-nginx"]
+	path = ingress-nginx/ingress-nginx
+	url = https://github.com/kubernetes/ingress-nginx.git

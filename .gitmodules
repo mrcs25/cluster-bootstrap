@@ -25,3 +25,6 @@
 [submodule "cert-manager/cert-manager"]
 	path = cert-manager/cert-manager
 	url = https://github.com/cert-manager/cert-manager.git
+[submodule "metallb/metallb"]
+	path = metallb/metallb
+	url = https://github.com/metallb/metallb.git

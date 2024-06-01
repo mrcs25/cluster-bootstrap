@@ -1,0 +1,35 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  name: prometheus-operator-kube-p-prometheus3
+  namespace: prometheus-operator
+spec:
+  enableAdminAPI: false
+  evaluationInterval: 30s
+  image: quay.io/prometheus/prometheus:v2.49.1
+  listenLocal: false
+  logFormat: logfmt
+  logLevel: info
+  podMonitorSelector:
+    matchLabels:
+      release: prometheus-operator
+  probeSelector:
+    matchLabels:
+      release: prometheus-operator
+  ruleSelector:
+    matchLabels:
+      release: prometheus-operator
+  scrapeConfigSelector:
+    matchLabels:
+      release: prometheus-operator
+  scrapeInterval: 30s
+  serviceMonitorSelector:
+    matchLabels:
+      release: prometheus-operator
+  shards: 1
+  version: v2.49.1
+  walCompression: true
+  tolerations:
+  - key: "arch"
+    effect: "NoSchedule"
+    value: arm7

@@ -16,3 +16,9 @@
 [submodule "metrics-server/metrics-server"]
 	path = metrics-server/metrics-server
 	url = https://github.com/kubernetes-sigs/metrics-server.git
+[submodule "monitoring/helm-charts"]
+	path = monitoring/helm-charts
+	url = https://github.com/prometheus-community/helm-charts.git
+[submodule "longhorn/longhorn"]
+	path = longhorn/longhorn
+	url = https://github.com/longhorn/longhorn.git

@@ -10,3 +10,6 @@
 [submodule "grafana-operator/grafana-operator"]
 	path = grafana-operator/grafana-operator
 	url = https://github.com/grafana/grafana-operator.git
+[submodule "rook/rook"]
+	path = rook/rook
+	url = https://github.com/rook/rook.git

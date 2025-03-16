@@ -22,3 +22,6 @@
 [submodule "longhorn/longhorn"]
 	path = longhorn/longhorn
 	url = https://github.com/longhorn/longhorn.git
+[submodule "cert-manager/cert-manager"]
+	path = cert-manager/cert-manager
+	url = https://github.com/cert-manager/cert-manager.git

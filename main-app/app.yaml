@@ -57,14 +57,17 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
-    path: postgres-operator/postgres-operator/charts/postgres-operator
-    targetRevision: feat/first-tools
-    helm:
-      releaseName: postgres-operator
-      valueFiles:
-        - ../../../values.yaml
+  sources:
+    - repoURL: https://opensource.zalando.com/postgres-operator/charts/postgres-operator
+      chart: postgres-operator
+      targetRevision: 1.14.0
+      helm:
+        valueFiles:
+        - $values/postgres-operator/values.yaml
+    -  repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
+       path: postgres-operator
+       targetRevision: feat/first-tools
+       ref: values
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: postgres-operator
@@ -85,14 +88,17 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
-    path: prometheus-operator/helm-charts/charts/kube-prometheus-stack
-    targetRevision: feat/first-tools
-    helm:
-      releaseName: prometheus-operator
-      valueFiles:
-        - ../../../values.yaml
+  sources:
+    - repoURL: https://prometheus-community.github.io/helm-charts
+      chart: kube-prometheus-stack
+      targetRevision: 69.8.1
+      helm:
+        valueFiles:
+        - $values/prometheus-operator/values.yaml
+    - repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
+      path: prometheus-operator
+      targetRevision: feat/first-tools
+      ref: values
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: prometheus-operator
@@ -114,14 +120,17 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
-    path: grafana-operator/grafana-operator/deploy/helm/grafana-operator
-    targetRevision: feat/first-tools
-    helm:
-      releaseName: grafana-operator
-      valueFiles:
-        - ../../../../values.yaml
+  sources:
+    - repoURL: https://grafana.github.io/helm-charts
+      chart: grafana-operator
+      targetRevision: 5.17.0
+      helm:
+        valueFiles:
+        - $values/grafana-operator/values.yaml
+    - repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
+      path: grafana-operator
+      targetRevision: feat/first-tools
+      ref: values
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: grafana-operator
@@ -132,6 +141,9 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - PrunePropagationPolicy=foreground
+      # fix "metadata.annotations: Too long"
+      - ServerSideApply=true
+      - Replace=true
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -189,10 +201,18 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
-    path: metrics-server/metrics-server/charts/metrics-server
-    targetRevision: feat/first-tools
+  sources:
+    - repoURL: 'https://kubernetes-sigs.github.io/metrics-server'
+      targetRevision: 3.12.2
+      chart: metrics-server
+      helm:
+        helm:
+          valueFiles:
+              - $values/metrics-server/values.yaml
+    - repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
+      path: metrics-server
+      targetRevision: feat/first-tools
+      ref: values
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: metrics-server
@@ -216,14 +236,17 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
-    path: longhorn/longhorn/chart
-    targetRevision: feat/first-tools
-    helm:
-      releaseName: longhorn
-      valueFiles:
-        - ../../values.yaml
+  sources:
+    - repoURL: https://charts.longhorn.io
+      targetRevision: 1.8.1
+      chart: longhorn
+      helm:
+        valueFiles:
+          - $values/longhorn/values.yaml
+    - repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
+      path: longhorn
+      targetRevision: feat/first-tools
+      ref: values
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: longhorn
@@ -244,16 +267,17 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    chart: cert-manager
-    repoURL: https://charts.jetstack.io
-    targetRevision: v1.14.4
-    helm:
-      releaseName: cert-manager
-      values: |
-        installCRDs: true
-        crds:
-          enabled: true
+  sources:
+    - chart: cert-manager
+      repoURL: https://charts.jetstack.io
+      targetRevision: 1.17.1
+      helm:
+        valueFiles:
+          - $values/cert-manager/values.yaml
+    - repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
+      path: cert-manager
+      targetRevision: feat/first-tools
+      ref: values
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: cert-manager
@@ -264,6 +288,9 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - PrunePropagationPolicy=foreground
+      # fix "metadata.annotations: Too long"
+      - ServerSideApply=true
+      - Replace=true
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -274,14 +301,17 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
-    path: metallb/metallb/charts/metallb
-    targetRevision: feat/first-tools
-    helm:
-      releaseName: metallb
-      valueFiles:
-        - ../../../values.yaml
+  sources:
+     - repoURL: https://metallb.github.io/metallb
+       chart: metallb
+       targetRevision: 0.14.9
+       helm:
+         valuesFiles:
+           - $values/metallb/values.yaml
+     - repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
+       path: metallb
+       targetRevision: feat/first-tools
+       ref: values
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: metallb
@@ -327,14 +357,17 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
-    path: ingress-nginx/ingress-nginx/charts/ingress-nginx
-    targetRevision: feat/first-tools
-    helm:
-      releaseName: ingress-nginx
-      valueFiles:
-        - ../../../values.yaml
+  sources:
+    - repoURL: https://kubernetes.github.io/ingress-nginx
+      chart: ingress-nginx
+      targetRevision: 4.12.0
+      helm:
+        valueFiles:
+          - $values/ingress-nginx/values.yaml 
+    - repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
+      path: ingress-nginx
+      targetRevision: feat/first-tools
+      ref: values
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: ingress-nginx

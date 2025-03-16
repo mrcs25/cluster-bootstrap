@@ -1,33 +1,9 @@
-[submodule "postgres-operator/postgres-operator"]
-	path = postgres-operator/postgres-operator
-	url = https://github.com/zalando/postgres-operator.git
-[submodule "prometheus-operator/helm-charts"]
-	path = prometheus-operator/helm-charts
-	url = https://github.com/prometheus-community/helm-charts.git
 [submodule "keycloak-operator/keycloak-k8s-resources"]
 	path = keycloak-operator/keycloak-k8s-resources
 	url = https://github.com/keycloak/keycloak-k8s-resources.git
-[submodule "grafana-operator/grafana-operator"]
-	path = grafana-operator/grafana-operator
-	url = https://github.com/grafana/grafana-operator.git
 [submodule "rook/rook"]
 	path = rook/rook
 	url = https://github.com/rook/rook.git
 [submodule "metrics-server/metrics-server"]
 	path = metrics-server/metrics-server
 	url = https://github.com/kubernetes-sigs/metrics-server.git
-[submodule "monitoring/helm-charts"]
-	path = monitoring/helm-charts
-	url = https://github.com/prometheus-community/helm-charts.git
-[submodule "longhorn/longhorn"]
-	path = longhorn/longhorn
-	url = https://github.com/longhorn/longhorn.git
-[submodule "cert-manager/cert-manager"]
-	path = cert-manager/cert-manager
-	url = https://github.com/cert-manager/cert-manager.git
-[submodule "metallb/metallb"]
-	path = metallb/metallb
-	url = https://github.com/metallb/metallb.git
-[submodule "nginx-ingress/ingress-nginx"]
-	path = ingress-nginx/ingress-nginx
-	url = https://github.com/kubernetes/ingress-nginx.git

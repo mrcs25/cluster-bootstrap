@@ -1,0 +1,9 @@
+[submodule "postgres-operator/postgres-operator"]
+	path = postgres-operator/postgres-operator
+	url = https://github.com/zalando/postgres-operator.git
+[submodule "prometheus-operator/helm-charts"]
+	path = prometheus-operator/helm-charts
+	url = https://github.com/prometheus-community/helm-charts.git
+[submodule "keycloak-operator/keycloak-k8s-resources"]
+	path = keycloak-operator/keycloak-k8s-resources
+	url = https://github.com/keycloak/keycloak-k8s-resources.git

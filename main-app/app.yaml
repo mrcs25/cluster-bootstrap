@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
     path: keycloak-operator
-    targetRevision: feat/first-tools
+    targetRevision: feat/add-tools
     directory:
   destination:
     server: 'https://kubernetes.default.svc'
@@ -35,7 +35,7 @@ spec:
   source:
     repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
     path: keycloak/manifests
-    targetRevision: feat/first-tools
+    targetRevision: feat/add-tools
     directory:
   destination:
     server: 'https://kubernetes.default.svc'
@@ -66,7 +66,7 @@ spec:
         - $values/postgres-operator/values.yaml
     -  repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
        path: postgres-operator
-       targetRevision: feat/first-tools
+       targetRevision: feat/add-tools
        ref: values
   destination:
     server: 'https://kubernetes.default.svc'
@@ -97,7 +97,7 @@ spec:
         - $values/prometheus-operator/values.yaml
     - repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
       path: prometheus-operator
-      targetRevision: feat/first-tools
+      targetRevision: feat/add-tools
       ref: values
   destination:
     server: 'https://kubernetes.default.svc'
@@ -129,7 +129,7 @@ spec:
         - $values/grafana-operator/values.yaml
     - repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
       path: grafana-operator
-      targetRevision: feat/first-tools
+      targetRevision: feat/add-tools
       ref: values
   destination:
     server: 'https://kubernetes.default.svc'
@@ -157,7 +157,7 @@ spec:
   source:
     repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
     path: grafana
-    targetRevision: feat/first-tools
+    targetRevision: feat/add-tools
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: grafana
@@ -181,7 +181,7 @@ spec:
 #   source:
 #     repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
 #     path: rook
-#     targetRevision: feat/first-tools
+#     targetRevision: feat/add-tools
 #   destination:
 #     server: 'https://kubernetes.default.svc'
 #     namespace: argocd
@@ -211,7 +211,7 @@ spec:
               - $values/metrics-server/values.yaml
     - repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
       path: metrics-server
-      targetRevision: feat/first-tools
+      targetRevision: feat/add-tools
       ref: values
   destination:
     server: 'https://kubernetes.default.svc'
@@ -245,7 +245,7 @@ spec:
           - $values/longhorn/values.yaml
     - repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
       path: longhorn
-      targetRevision: feat/first-tools
+      targetRevision: feat/add-tools
       ref: values
   destination:
     server: 'https://kubernetes.default.svc'
@@ -276,7 +276,7 @@ spec:
           - $values/cert-manager/values.yaml
     - repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
       path: cert-manager
-      targetRevision: feat/first-tools
+      targetRevision: feat/add-tools
       ref: values
   destination:
     server: 'https://kubernetes.default.svc'
@@ -310,7 +310,7 @@ spec:
            - $values/metallb/values.yaml
      - repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
        path: metallb
-       targetRevision: feat/first-tools
+       targetRevision: feat/add-tools
        ref: values
   destination:
     server: 'https://kubernetes.default.svc'
@@ -335,7 +335,7 @@ spec:
   source:
     repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
     path: metallb/manifests
-    targetRevision: feat/first-tools
+    targetRevision: feat/add-tools
     directory:
   destination:
     server: 'https://kubernetes.default.svc'
@@ -366,7 +366,7 @@ spec:
           - $values/ingress-nginx/values.yaml 
     - repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
       path: ingress-nginx
-      targetRevision: feat/first-tools
+      targetRevision: feat/add-tools
       ref: values
   destination:
     server: 'https://kubernetes.default.svc'
@@ -391,7 +391,7 @@ spec:
   source:
     repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
     path: prometheus
-    targetRevision: feat/first-tools
+    targetRevision: feat/add-tools
     directory:
   destination:
     server: 'https://kubernetes.default.svc'

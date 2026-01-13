@@ -60,7 +60,7 @@ spec:
   sources:
     - repoURL: https://opensource.zalando.com/postgres-operator/charts/postgres-operator
       chart: postgres-operator
-      targetRevision: 1.14.0
+      targetRevision: 1.15.1
       helm:
         valueFiles:
         - $values/postgres-operator/values.yaml
@@ -91,7 +91,7 @@ spec:
   sources:
     - repoURL: https://prometheus-community.github.io/helm-charts
       chart: kube-prometheus-stack
-      targetRevision: 69.8.1
+      targetRevision: 80.13.3
       helm:
         valueFiles:
         - $values/prometheus-operator/values.yaml
@@ -123,7 +123,7 @@ spec:
   sources:
     - repoURL: https://grafana.github.io/helm-charts
       chart: grafana-operator
-      targetRevision: 5.17.0
+      targetRevision: 5.21.4
       helm:
         valueFiles:
         - $values/grafana-operator/values.yaml
@@ -203,7 +203,7 @@ spec:
   project: default
   sources:
     - repoURL: 'https://kubernetes-sigs.github.io/metrics-server'
-      targetRevision: 3.12.2
+      targetRevision: 3.13.0
       chart: metrics-server
       helm:
         helm:
@@ -238,7 +238,7 @@ spec:
   project: default
   sources:
     - repoURL: https://charts.longhorn.io
-      targetRevision: 1.8.1
+      targetRevision: 1.10.1
       chart: longhorn
       helm:
         valueFiles:
@@ -270,7 +270,7 @@ spec:
   sources:
     - chart: cert-manager
       repoURL: https://charts.jetstack.io
-      targetRevision: 1.17.1
+      targetRevision: 1.19.2
       helm:
         valueFiles:
           - $values/cert-manager/values.yaml
@@ -304,7 +304,7 @@ spec:
   sources:
      - repoURL: https://metallb.github.io/metallb
        chart: metallb
-       targetRevision: 0.14.9
+       targetRevision: 0.15.3
        helm:
          valuesFiles:
            - $values/metallb/values.yaml
@@ -360,7 +360,7 @@ spec:
   sources:
     - repoURL: https://kubernetes.github.io/ingress-nginx
       chart: ingress-nginx
-      targetRevision: 4.12.0
+      targetRevision: 4.14.1
       helm:
         valueFiles:
           - $values/ingress-nginx/values.yaml 

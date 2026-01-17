@@ -9,7 +9,7 @@ spec:
   datasource:
     name: prometheus
     type: prometheus
-    url: http://prometheus-operated.prometheus-operator:9090
+    url: http://prometheus-operator-kube-p-prometheus.prometheus-operator:9090
     isDefault: true
     access: proxy
     jsonData:

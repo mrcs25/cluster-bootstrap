@@ -206,9 +206,8 @@ spec:
       targetRevision: 3.13.0
       chart: metrics-server
       helm:
-        helm:
-          valueFiles:
-              - $values/metrics-server/values.yaml
+        valueFiles:
+            - $values/metrics-server/values.yaml
     - repoURL: 'https://github.com/mrcs25/cluster-bootstrap.git'
       path: metrics-server
       targetRevision: feat/add-tools

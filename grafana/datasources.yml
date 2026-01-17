@@ -11,6 +11,7 @@ spec:
     type: prometheus
     url: http://prometheus-operated.prometheus-operator:9090
     isDefault: true
+    access: proxy
     jsonData:
       "tlsSkipVerify": true
       "timeInterval": "5s"

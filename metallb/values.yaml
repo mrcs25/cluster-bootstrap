@@ -1,0 +1,4 @@
+# Fix for Talos
+# https://github.com/siderolabs/talos/issues/10291#issuecomment-2639128826
+speaker:
+  ignoreExcludeLB: true

@@ -1,0 +1,9 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: pool
+spec:
+  addresses:
+  - 192.168.178.242-192.168.178.249
+  autoAssign: true
+  avoidBuggyIPs: false

@@ -1,0 +1,7 @@
+persistence:
+  defaultNodeSelector:
+    enable: true
+    selector: "storage"
+# Argo-CD fix
+preUpgradeChecker:
+  jobEnabled: false

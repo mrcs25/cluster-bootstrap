@@ -414,7 +414,7 @@ spec:
   sources:
     - repoURL: ghcr.io/renovatebot/charts
       chart: renovate
-      targetRevision: 46.322.0
+      targetRevision: 46.322.1
       helm:
         valueFiles:
           - $values/renovate/values.yml 

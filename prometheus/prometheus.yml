@@ -1,0 +1,31 @@
+apiVersion: monitoring.coreos.com/v1
+kind: Prometheus
+metadata:
+  name: prometheus
+  namespace: prometheus-operator
+spec:
+  enableAdminAPI: false
+  evaluationInterval: 30s
+  image: quay.io/prometheus/prometheus:v3.9.1
+  listenLocal: false
+  logFormat: logfmt
+  logLevel: info
+  podMonitorSelector:
+    matchLabels:
+      release: prometheus-operator
+  probeSelector:
+    matchLabels:
+      release: prometheus-operator
+  ruleSelector:
+    matchLabels:
+      release: prometheus-operator
+  scrapeConfigSelector:
+    matchLabels:
+      release: prometheus-operator
+  scrapeInterval: 30s
+  serviceMonitorSelector:
+    matchLabels:
+      release: prometheus-operator
+  shards: 1
+  version: v3.9.1
+  walCompression: true

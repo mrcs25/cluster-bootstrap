@@ -1,0 +1,9 @@
+[submodule "keycloak-operator/keycloak-k8s-resources"]
+	path = keycloak-operator/keycloak-k8s-resources
+	url = https://github.com/keycloak/keycloak-k8s-resources.git
+[submodule "rook/rook"]
+	path = rook/rook
+	url = https://github.com/rook/rook.git
+[submodule "metrics-server/metrics-server"]
+	path = metrics-server/metrics-server
+	url = https://github.com/kubernetes-sigs/metrics-server.git

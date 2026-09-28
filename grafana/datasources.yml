@@ -1,0 +1,17 @@
+apiVersion: grafana.integreatly.org/v1beta1
+kind: GrafanaDatasource
+metadata:
+  name: prometheus
+spec:
+  instanceSelector:
+    matchLabels:
+      dashboards: "grafana"
+  datasource:
+    name: prometheus
+    type: prometheus
+    url: http://prometheus-operator-kube-p-prometheus.prometheus-operator:9090
+    isDefault: true
+    access: proxy
+    jsonData:
+      "tlsSkipVerify": true
+      "timeInterval": "5s"

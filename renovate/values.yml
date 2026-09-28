@@ -1,0 +1,12 @@
+existingSecret: "renovate-envs"
+renovate:
+  config: |
+    {
+      "platform": "github",
+      "endpoint": "https://api.github.com",
+      "autodiscover": "false",
+      "dryRun": true,
+      "printConfig": true,
+      "logLevel": "debug",
+      "repositories": ["mrcs25/cluster-bootstrap""]
+    }

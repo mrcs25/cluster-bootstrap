@@ -1,0 +1,19 @@
+apiVersion: "acid.zalan.do/v1"
+kind: postgresql
+metadata:
+  name: keycloak-postgres
+spec:
+  teamId: keycloak
+  volume:
+    size: 5Gi
+  numberOfInstances: 2
+  users:
+    db_owner:
+      - superuser
+      - createdb
+    keycloak:
+      - createrole
+  databases:
+    keycloak: keycloak
+  postgresql:
+    version: "16"

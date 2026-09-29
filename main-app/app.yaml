@@ -203,7 +203,7 @@ spec:
   project: default
   sources:
     - repoURL: 'https://kubernetes-sigs.github.io/metrics-server'
-      targetRevision: 3.13.0
+      targetRevision: 3.14.0
       chart: metrics-server
       helm:
         valueFiles:

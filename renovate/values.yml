@@ -3,10 +3,17 @@ renovate:
   config: |
     {
       "platform": "github",
+      "onboarding": false,
+      "requireConfig": "optional",
       "endpoint": "https://api.github.com",
       "autodiscover": "false",
-      "dryRun": true,
-      "printConfig": true,
-      "logLevel": "debug",
-      "repositories": ["mrcs25/cluster-bootstrap""]
+      "repositories": ["mrcs25/cluster-bootstrap","mrcs25/devcontainer"],
+      "baseBranches": ["feat/add-tools","feat/first-tools"],
+      "prHourlyLimit": 0,
+      "argocd": {
+        "managerFilePatterns": [
+          "/\\.yaml$/",
+          "/\\.yml$/"
+        ]
+      }
     }

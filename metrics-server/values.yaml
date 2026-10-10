@@ -1,0 +1,3 @@
+# https://docs.siderolabs.com/kubernetes-guides/monitoring-and-observability/deploy-metrics-server
+args:
+  - --kubelet-insecure-tls

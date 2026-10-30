@@ -12,3 +12,26 @@ nodeExporter:
 
 prometheus:
   enabled: true
+
+prometheusOperator:
+  # Using ArgoCD additional annotations are required to serve some dependencies
+  # See: https://github.com/prometheus-community/helm-charts/issues/4500
+  admissionWebhooks:
+    enabled: true
+    annotations:
+      argocd.argoproj.io/hook: PreSync
+      argocd.argoproj.io/hook-delete-policy: HookFailed
+    patch:
+      annotations:
+        argocd.argoproj.io/hook: PreSync
+        argocd.argoproj.io/hook-delete-policy: HookFailed
+
+    # Added because of Crashloopbackoff of kube-prometheus-stack-admission-patch
+    # "msg":"failed to patch webhooks: failed getting validating webhook:
+    # validatingwebhookconfigurations.admissionregistration.k8s.io \"kube-prometheus-stack-admission\" not found"}
+    mutatingWebhookConfiguration:
+      annotations:
+        argocd.argoproj.io/hook: PreSync
+    validatingWebhookConfiguration:
+      annotations:
+        argocd.argoproj.io/hook: PreSync

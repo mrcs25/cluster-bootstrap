@@ -1,0 +1,17 @@
+apiVersion: logging.banzaicloud.io/v1beta1
+kind: ClusterOutput
+metadata:
+  name: loki
+spec:
+  loki:
+    buffer:
+      chunk_limit_size: 2m
+      flush_interval: 10s
+      flush_mode: interval
+    labels:
+      app: "$.app"
+      namespace: "$.namespace"
+      type: "$.type"
+    line_format: json
+    url: http://loki-loki-gateway.logging.svc.cluster.local:80
+  protected: true

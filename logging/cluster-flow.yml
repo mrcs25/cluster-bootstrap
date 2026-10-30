@@ -1,0 +1,15 @@
+apiVersion: logging.banzaicloud.io/v1beta1
+kind: ClusterFlow
+metadata:
+  name: logs
+spec:
+  filters:
+    - record_modifier:
+        records:
+          - type: log
+          - namespace: ${record["kubernetes"]["namespace_name"]}
+          - app: >-
+              ${record["kubernetes"]["labels"]["app.kubernetes.io/name"] ||
+              record["kubernetes"]["labels"]["app"]}
+  globalOutputRefs:
+    - loki

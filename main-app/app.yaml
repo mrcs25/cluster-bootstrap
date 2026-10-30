@@ -89,9 +89,9 @@ metadata:
 spec:
   project: default
   sources:
-    - repoURL: https://prometheus-community.github.io/helm-charts
+    - repoURL: ghcr.io/prometheus-community/charts
       chart: kube-prometheus-stack
-      targetRevision: 80.13.3
+      targetRevision: 92.11.0
       helm:
         valueFiles:
         - $values/prometheus-operator/values.yaml

@@ -1,17 +1,17 @@
-alertmanager:
-  enabled: false
+# alertmanager:
+#   enabled: false
 
 grafana:
   enabled: false
 
-kubeStateMetrics:
-  enabled: true
+# kubeStateMetrics:
+#   enabled: true
 
-nodeExporter:
-  enabled: true
+# nodeExporter:
+#   enabled: true
 
-prometheus:
-  enabled: true
+# prometheus:
+#   enabled: true
 
 prometheusOperator:
   # Using ArgoCD additional annotations are required to serve some dependencies

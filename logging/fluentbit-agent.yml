@@ -1,0 +1,8 @@
+apiVersion: logging.banzaicloud.io/v1beta1
+kind: FluentbitAgent
+metadata:
+    name: fluentbit
+spec:
+  metrics:
+    serviceMonitor: true
+    port: 2020

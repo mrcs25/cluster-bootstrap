@@ -487,7 +487,6 @@ spec:
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: logging
-    path: logging
   syncPolicy:
     automated:
       prune: true

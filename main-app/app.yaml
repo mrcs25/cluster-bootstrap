@@ -128,7 +128,7 @@ spec:
   sources:
     - repoURL: https://grafana.github.io/helm-charts
       chart: grafana-operator
-      targetRevision: 5.21.4
+      targetRevision: 5.26.0
       helm:
         valueFiles:
         - $values/grafana-operator/values.yaml
